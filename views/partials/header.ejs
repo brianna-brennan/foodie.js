@@ -9,9 +9,11 @@
 </head>
 <body>
     <nav>
-        <a href="/">Whats Cooking</a>
-        <a href="/">Add Recipe</a>
-        <a href="/">My Cookbook</a>
+            <a href="/">What's Cooking</a>
+            <% if (user) { %>
+            <a href="/">Add Recipe</a>
+            <a href="/">My Cook Book</a>
+           <% } else { %>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+            <% } %>
     </nav>
-</body>
-</html>

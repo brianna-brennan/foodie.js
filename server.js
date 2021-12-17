@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var passport = require('passport');
 var methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
@@ -13,6 +15,9 @@ require('dotenv').config();
 
 // This will connect us to the database
 require('./config/database');
+
+// require the passport module
+require('./config/passport');
 
 var app = express();
 
@@ -25,6 +30,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
+app.use(
+	session({
+		secret: process.env.SECRET,
+		resave: false,
+		saveUninitialized: true,
+	})
+);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(function (req, res, next) {
+	// add req.user to res.locals
+	res.locals.user = req.user;
+	next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
