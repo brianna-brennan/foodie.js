@@ -9,26 +9,27 @@ const reviewSchema = new Schema(
 		userName: String,
 		userAvatar: String,
 	},
-	{
-		timestamps: true,
-	}
+	{ timestamps: true }
 );
 
-const recipeSchema = new Schema({
-	title: {
-		type: String,
-		required: true,
+const recipeSchema = new Schema(
+	{
+		title: {
+			type: String,
+			required: true,
+		},
+		ingredients: {
+			type: String,
+			required: true,
+		},
+		instructions: {
+			type: String,
+			required: true,
+		},
+		reviews: [reviewSchema],
+		user: { type: Schema.Types.ObjectId, ref: 'User' },
 	},
-	ingredients: {
-		type: String,
-		required: true,
-	},
-	instructions: {
-		type: String,
-		required: true,
-	},
-	reviews: [reviewsSchema],
-	timestamps: true,
-});
+	{ timestamps: true }
+);
 
 module.exports = mongoose.model('Recipe', recipeSchema);

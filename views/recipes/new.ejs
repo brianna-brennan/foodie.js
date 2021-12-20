@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/recipes/new/add" method="POST">
+    <label>Title:</label>
+    <input type="text" name="title">
+    
+    <label>Ingredients:</label>
+    <input type="text" name="ingredients">
+
+    <label>Instructions:</label>
+    <input type="text" name="instructions">
+
+    <input type="submit" value="Add Recipe">
+    
+</form>
+
+    <%- include('../partials/footer') %>

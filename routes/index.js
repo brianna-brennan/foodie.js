@@ -7,6 +7,10 @@ router.get('/', function (req, res, next) {
 	res.render('index', { title: 'Express' });
 });
 
+// router.get('/', function (req, res, next) {
+// 	res.redirect('/');
+// });
+
 // Google OAuth login route
 router.get(
 	'/auth/google',
@@ -18,14 +22,14 @@ router.get(
 	'/oauth2callback',
 	passport.authenticate('google', {
 		successRedirect: '/recipes',
-		failureRedirect: '/recipes',
+		failureRedirect: '/',
 	})
 );
 
 // OAuth logout route
 router.get('/logout', function (req, res) {
 	req.logout();
-	res.redirect('/recipes');
+	res.redirect('/');
 });
 
 module.exports = router;
