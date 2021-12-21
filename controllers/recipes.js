@@ -34,10 +34,8 @@ function show(req, res) {
 
 function deleteRecipe(req, res) {
 	Recipe.findOneAndDelete(
-		// Ensue that the book was created by the logged in user
 		{ _id: req.params.id, user: req.user._id },
 		function (err) {
-			// Deleted book, so must redirect to index
 			res.redirect('/recipes');
 		}
 	);

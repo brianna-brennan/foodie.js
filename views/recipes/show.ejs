@@ -9,8 +9,9 @@
   <div><%= recipe.instructions %></div>
 <br>
 <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-<button type="submit" id="delete-recipe">Delete</button>
-</form>
+<button type="submit" id="delete-recipe">Delete</button></form>
+
+
 <br><br>
 <h2>Reviews</h2>
 <% if (user) { %>
@@ -53,6 +54,11 @@
               <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit" id="delete-review">Delete</button>
               </form>
+            </form>
+            <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                <input name="text">
+                <button id="update-button" type="submit">Update</button>
+        </form>
             <% } %>
           </td>
         </tr>

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const reviewsCtrl = require('../controllers/reviews');
 
+router.put('/reviews/:id/', reviewsCtrl.update);
+
 //CREATE- create new review
 router.post('/recipes/:id/reviews', reviewsCtrl.create);
 

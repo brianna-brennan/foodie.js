@@ -3,6 +3,7 @@ const Recipe = require('../models/recipe');
 module.exports = {
 	create,
 	delete: deleteReview,
+	update,
 };
 
 function deleteReview(req, res, next) {
@@ -30,6 +31,20 @@ function create(req, res) {
 		recipe.reviews.push(req.body);
 		recipe.save(function (err) {
 			if (err) console.log(err);
+			res.redirect(`/recipes/${recipe._id}`);
+		});
+	});
+}
+
+function update(req, res) {
+	Recipe.findOne({ 'reviews._id': req.params.id }, function (err, recipe) {
+		console.log(req.user);
+		const reviewSubdoc = recipe.reviews.id(req.params.id);
+		console.log(recipe);
+		if (!reviewSubdoc.user.equals(req.user._id))
+			return res.redirect(`/recipes/${recipe._id}`);
+		reviewSubdoc.content = req.body.text;
+		recipe.save(function (err) {
 			res.redirect(`/recipes/${recipe._id}`);
 		});
 	});
