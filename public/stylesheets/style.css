@@ -1,8 +1,7 @@
-@media all and(max-width: 736px) {
+@media only screen and (max-width: 736px) {
 	.recipes-preview {
 		text-align: center;
 		border: 0x;
-		border-color: green;
 	}
 
 	.nav {
@@ -12,79 +11,103 @@
 	.login img {
 		height: 30px;
 	}
-}
 
-body {
-	background-color: rgb(255, 255, 255);
-	padding: 50px;
-	text-align: center;
-	margin-left: 40px;
-}
-.header {
-	color: rgb(41, 37, 28);
-	font-family: 'Amatic SC';
-	font-size: 18px;
-}
+	body {
+		background-color: rgb(255, 255, 255);
+		padding: 50px;
+		text-align: center;
+		margin-left: 40px;
+	}
+	.header {
+		color: rgb(41, 37, 28);
+		font-family: 'Amatic SC';
+		font-size: 18px;
+	}
 
-ul {
-	list-style-type: none;
-	margin: 10px;
-	background-color: sienna;
-}
+	ul {
+		list-style-type: none;
+		margin: 10px;
+	}
 
-li {
-	float: left;
-	padding: 10px;
-}
+	li {
+		float: left;
+		padding: 10px;
+	}
 
-h1 {
-	color: rgb(41, 37, 28);
-	font-family: 'Amatic SC';
-	font-size: 60px;
-	background-color: lightgreen;
-}
+	h1 {
+		color: rgb(41, 37, 28);
+		font-family: 'Amatic SC';
+		font-size: 60px;
+		background-color: rgb(177, 184, 159);
+		border-radius: 8px;
+	}
 
-h2 {
-	font-family: 'Amatic SC';
-}
+	h2 {
+		font-family: 'Amatic SC';
+	}
 
-h3 {
-	font-family: Arial;
-	font-size: 17px;
-}
+	h3 {
+		font-family: Arial;
+		font-size: 17px;
+	}
 
-.login img {
-	height: 30px;
-}
+	.login img {
+		height: 30px;
+	}
 
-#button {
-	color: rgb(255, 255, 255);
-}
+	#button {
+		color: rgb(255, 255, 255);
+	}
 
-#instructions {
-	background-color: rgb(88, 94, 73);
-	border: none;
-	padding: 8px 40px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-family: 'Amatic SC';
-	font-size: 20px;
-	border-radius: 8px;
-	z-index: 1;
-	box-shadow: 0 5px rgba(0, 0, 0, 0.2);
-}
+	#instructions {
+		background-color: rgb(88, 94, 73);
+		border: none;
+		padding: 8px 40px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-family: 'Amatic SC';
+		font-size: 20px;
+		border-radius: 8px;
+		z-index: 1;
+		box-shadow: 0 5px rgba(49, 33, 33, 0.2);
+	}
 
-input[type='text'] {
-	width: 20em;
-	height: 2em;
-}
+	input[type='text'] {
+		width: 20em;
+		height: 2em;
+	}
 
-input[type='submit'] {
-	color: rgb(255, 255, 255);
-	font-size: 10px;
-	padding: 8px 20px;
-	background-color: rgb(88, 94, 73);
-	box-shadow: 0 5px rgba(0, 0, 0, 0.2);
-	border-radius: 8px;
+	input[type='submit'] {
+		color: rgb(255, 255, 255);
+		font-size: 10px;
+		padding: 8px 20px;
+		background-color: rgb(88, 94, 73);
+		box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+		border-radius: 8px;
+	}
+
+	.review-user {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.avatar {
+		max-width: 60px;
+		border-radius: 50%;
+		margin: auto;
+	}
+
+	#new-form {
+		text-align: center;
+	}
+
+	.new {
+		display: block;
+	}
+
+	div {
+		display: flex;
+		flex-direction: column;
+	}
 }

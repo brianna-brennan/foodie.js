@@ -1,82 +1,76 @@
+<link rel='stylesheet' href="/stylesheets/style.css" type="text/css"/>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bangers&family=Press+Start+2P&display=swap" rel="stylesheet">
 <%- include('../partials/header') %>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
 <section id="show-page">
- <br><div>Title: </div>
-  <div><%= recipe.title %></div><br>
-  <div>Ingredients: </div><br>
-  <div><%= recipe.ingredients %></div><br>
-  <div>Instructions: </div><br>
-  <div><%= recipe.instructions %></div><br>
+ <br><h1><%= recipe.title %></h1>
+  
+  <h2>Ingredients: </h2><br>
+  <h3><%= recipe.ingredients %></h3><br>
+  <h2>Instructions: </h2><br>
+  <h3><%= recipe.instructions %></h3><br>
 <br>
-<form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-<button type="submit" id="delete-recipe">Delete Recipe</button></form>
 
 
-<br><br>
 <h2>Reviews</h2>
 <% if (user) { %>
   <form id="add-review-form" method="POST" action="/recipes/<%= recipe._id %>/reviews">
    <br><label>Review:</label><br>
-    <textarea name="content"></textarea>
-    <label>Rating:</label><br>
+    <textarea name="content"></textarea><br>
+    <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
-    </select>
+    </select><br><br>
     <input type="submit" value="Add Review">
   </form>
 <% } %>
-
 <% if (recipe.reviews.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Review</th>
-        <th>Rating</th>
-      </tr>
-    </thead>
-    <tbody>
+    <div class="review-user">
       <% let total = 0 %>
       <% recipe.reviews.forEach(function(r) { %>
         <% total += r.rating %>
-        <tr>
-          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-              <td><%= r.content %></td>
-              <td><%= r.rating %></td>
-        </tr>
-    <tr>
+
+          <div><img alt="avatar" class="avatar" src="<%= r.userAvatar %>"><%= r.userName %></div>
+            <div><%= r.createdAt.toLocaleDateString() %></div>
+              <div><%= r.content %></div>
+              <div><%= r.rating %></div>
+        
+    
+        
             <% if (user && user._id.equals(r.user)) { %>
-            <form class="form-inline" action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                <div class="form-group">
-                    <button type="submit" id="delete-review">Delete Review</button>
-                </div>
-            </form>
+            
+                .
+                <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                    <input name="text">
+                    
+                    <button id="update-button" type="submit">Update Review</button>
+                </form>
+                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                       
+                     <button type="submit" id="delete-review">Delete Review</button>
+                  
+          </form>
+          <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <input type="submit" id="delete-recipe" value="Delete Recipe"></form>
+        
+          <% } %>
+        </div>
+    
+        
+          <% }); %>
           
          
-          <form class="form-inline" action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-            <div class="form-group">
-              <input class="form-control" name="text">
-              <button id="update-button" type="submit">Update Review</button>
-              </div>
-          </form>
-          <% } %>
-    </tr>
-          <% }); %>
-    
-        <td colspan="3"></td>
-        <td><strong><%= (total / recipe.reviews.length).toFixed(1) %></strong></td>
+       
+        <strong><%= (total / recipe.reviews.length).toFixed(1) %></strong>
       
-    </tbody>
-  </table>
 <% } else { %>
   <h5>No Reviews Yet</h5>
 <% } %>
+
+
+    
     
 <%- include('../partials/footer') %>

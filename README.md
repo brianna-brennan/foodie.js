@@ -8,11 +8,12 @@ Foodie.js is a mobile web app desinged to share and keep track of your favorite 
 
 ## Screenshots 📸
 
-| <img alt="Login Screenshot" src="public/design/login.png" width="350"> | <img alt="Registration Screenshot" src="public/design/registration.png" width="350"> | <img alt="Main Page Screenshot" src="public/design/home.png" width="350"> | <img alt="Search Item Screenshot" src="public/design/searchitem.png" width="350">
+| <img src="public/images/Screen Shot 2021-12-22 at 10.48.23 PM.png" width="350"> | <img src="public/images/Screen Shot 2021-12-22 at 10.48.48 PM.png" width="350"> | <img src="public/images/Screen Shot 2021-12-22 at 10.49.38 PM.png" width="350"> | <img
+| <img src=" public/images/Screen Shot 2021-12-22 at 10.49.46 PM.png" width="350"> | <img src="public/images/Screen Shot 2021-12-22 at 10.50.03 PM.png" width="350">
 
 ## Design Process 📐
 
-In the design phase of this application, I started thinking about user stories to determine key features. The primary user features are Adding and Rating/Reviewing recipes. I decided to streamline authentication and use Google OAuth to help with this. I used Whimsical and Trello to plan out the features and UI before developing the app.
+In the design phase of this application, I started thinking about user stories to determine key features. The primary user features are Adding and Rating/Reviewing recipes. I decided to streamline authentication and used Google OAuth to help with this. I used Whimsical and Trello to plan out the features and UI before developing the app.
 
 - [Trello Board with Whimsical Screenshots] (https://trello.com/b/4SnsoVeR/foodiejs)
 

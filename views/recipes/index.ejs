@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bangers&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="public/stylesheet/style.css">
-    <title>Document</title>
+    <title>Foodie.js</title>
 </head>
 <body>
     <%- include('../partials/header') %>
@@ -18,9 +16,10 @@
         <% recipes.forEach(function(r) { %>
           <tr>
             <td>
-                <h2 style="font: 15px"><%= r.title %></h2>
-                <h3><%= r.ingredients %></h3>
-               <button id="instructions"><a id="button" href="/recipes/<%= r._id %>">Instructions</a></button>
+              <h2 style="font: 15px"><%= r.title %></h2>
+              <h3><%= r.ingredients %></h3>
+              <br>
+              <button id="instructions"><a id="button" href="/recipes/<%= r._id %>">Instructions</a></button>
             </td>
           </tr>
           <% }); %>

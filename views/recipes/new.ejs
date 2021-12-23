@@ -1,19 +1,23 @@
+
 <%- include('../partials/header') %>
-<link rel="stylesheet" href="styles.css">
 
 <form id="new-form" action="/recipes/new/add" method="POST">
     <br>
     <br>
-    <label>Title:</label><br>
-    <input type="text" name="title"><br>
-    
-    <label>Ingredients:</label><br>
-    <input type="text" name="ingredients"><br>
-
-    <label>Instructions:</label><br>
-    <input type="text" name="instructions"><br><br>
-
-    <input type="submit" value="Add Recipe"><br>
+    <br>
+    <div><label>Title:</label>
+        <textarea name="title"></textarea>
+</div>
+<div>
+    <label>Ingredients:</label>
+    <textarea name="ingredients"></textarea>
+</div>
+<div>
+    <label>Instructions:</label>
+    <textarea name="instructions"></textarea>
+    <br>
+</div>
+    <input type="submit" value="Add Recipe">
     
 </form>
 
