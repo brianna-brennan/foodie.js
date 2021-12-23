@@ -10,6 +10,10 @@
   <h3><%= recipe.instructions %></h3><br>
 <br>
 
+<% if (user) { %>
+<form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+  <input type="submit" id="delete-recipe" value="Delete Recipe"></form>
+  <% } %>
 
 <h2>Reviews</h2>
 <% if (user) { %>
@@ -41,7 +45,7 @@
     
         
             <% if (user && user._id.equals(r.user)) { %>
-            
+      
                 .
                 <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
                     <input name="text">
@@ -53,8 +57,7 @@
                      <button type="submit" id="delete-review">Delete Review</button>
                   
           </form>
-          <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <input type="submit" id="delete-recipe" value="Delete Recipe"></form>
+  
         
           <% } %>
         </div>
