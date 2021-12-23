@@ -47,6 +47,7 @@ app.use(function (req, res, next) {
 	next();
 });
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 app.use('/', indexRouter);
 app.use('/recipes', recipeRouter);
