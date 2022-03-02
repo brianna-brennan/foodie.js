@@ -110,3 +110,7 @@ div {
 	display: flex;
 	flex-direction: column;
 }
+
+#image {
+	background-image: url('https://globalimagecreation.com/wp-content/uploads/2018/01/pavillon-food_photographer-globalimagecreation.comDSC05769-min.jpg.webp');
+}
