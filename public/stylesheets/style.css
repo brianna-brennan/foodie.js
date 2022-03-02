@@ -39,11 +39,20 @@ h1 {
 	font-size: 60px;
 	background-color: rgb(177, 184, 159);
 	border-radius: 8px;
-	text-align: center;
+	text-align: left;
+	padding-left: 1rem;
 }
 
 h2 {
 	font-family: 'Amatic SC';
+	text-align: left;
+	border-radius: 5px;
+}
+
+.card {
+	transition: 0.3s;
+	padding: 0.5rem;
+	width: 35%;
 }
 
 h3 {
@@ -113,4 +122,8 @@ div {
 
 #image {
 	background-image: url('https://globalimagecreation.com/wp-content/uploads/2018/01/pavillon-food_photographer-globalimagecreation.comDSC05769-min.jpg.webp');
+}
+
+#home-page {
+	text-align: left;
 }
